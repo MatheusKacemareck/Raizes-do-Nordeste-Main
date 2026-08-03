@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Escolha uma Unidade</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/desktop.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+
+        <img src="img/logo.png">
+
+        <div>
+
+            <h2>Raízes do Nordeste</h2>
+
+            <span>Escolha uma unidade</span>
+
+        </div>
+
+    </div>
+
+</header>
+
+<section class="container">
+
+    <h2>
+
+        Nossas Unidades
+
+    </h2>
+
+    <p>
+
+        Escolha a unidade onde deseja retirar ou receber seu pedido.
+
+    </p>
+
+</section>
+
+
+<section class="container">
+
+    <div class="unidade-card">
+
+        <i class="fa-solid fa-store icone-unidade"></i>
+
+        <h3>Recife Centro</h3>
+
+        <p>
+
+            Rua da Aurora, 1500
+
+        </p>
+
+        <p>
+
+            ⏰ 08:00 às 22:00
+
+        </p>
+
+        <button
+            class="btn"
+            onclick="selecionarUnidade('Recife Centro')">
+
+            Selecionar
+
+        </button>
+
+    </div>
+
+
+    <div class="unidade-card">
+
+        <i class="fa-solid fa-store icone-unidade"></i>
+
+        <h3>Boa Viagem</h3>
+
+        <p>
+
+            Av. Boa Viagem, 890
+
+        </p>
+
+        <p>
+
+            ⏰ 08:00 às 23:00
+
+        </p>
+
+        <button
+            class="btn"
+            onclick="selecionarUnidade('Boa Viagem')">
+
+            Selecionar
+
+        </button>
+
+    </div>
+
+
+    <div class="unidade-card">
+
+        <i class="fa-solid fa-store icone-unidade"></i>
+
+        <h3>Olinda</h3>
+
+        <p>
+
+            Rua do Amparo, 420
+
+        </p>
+
+        <p>
+
+            ⏰ 08:00 às 22:00
+
+        </p>
+
+        <button
+            class="btn"
+            onclick="selecionarUnidade('Olinda')">
+
+            Selecionar
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<nav>
+
+    <a href="index.html">
+
+        <i class="fa-solid fa-house"></i>
+
+        <span>Início</span>
+
+    </a>
+
+    <a class="ativo"
+        href="unidades.html">
+
+        <i class="fa-solid fa-location-dot"></i>
+
+        <span>Unidades</span>
+
+    </a>
+
+    <a href="cardapio.html">
+
+        <i class="fa-solid fa-utensils"></i>
+
+        <span>Cardápio</span>
+
+    </a>
+
+    <a href="perfil.html">
+
+        <i class="fa-solid fa-user"></i>
+
+        <span>Perfil</span>
+
+    </a>
+
+</nav>
+
+
+<script src="js/usuario.js"></script>
+
+<script>
+
+function selecionarUnidade(nome){
+
+    salvarUnidade(nome);
+
+    localStorage.setItem(
+
+        "unidade",
+
+        nome
+
+    );
+
+    window.location.href =
+
+        "cardapio.html";
+
+}
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Cardápio | Raízes do Nordeste</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/desktop.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+
+        <img src="img/logo.png">
+
+        <div>
+
+            <h2>Raízes do Nordeste</h2>
+
+            <span id="unidadeSelecionada">
+
+                Selecione uma unidade
+
+            </span>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<section class="container">
+
+    <h2>
+
+        Cardápio
+
+    </h2>
+
+    <p>
+
+        Escolha seus pratos favoritos.
+
+    </p>
+
+</section>
+
+
+<section class="container">
+
+    <input
+
+        id="pesquisa"
+
+        type="text"
+
+        placeholder="🔍 Pesquisar produto..."
+
+        onkeyup="pesquisarProdutos()"
+
+        style="width:100%;
+               padding:14px;
+               border-radius:10px;
+               border:1px solid #DDD;
+               margin-bottom:20px;">
+
+</section>
+
+
+<section class="categorias">
+
+    <button onclick="filtrarCategoria('Todos')">
+
+        Todos
+
+    </button>
+
+    <button onclick="filtrarCategoria('Tapiocas')">
+
+        Tapiocas
+
+    </button>
+
+    <button onclick="filtrarCategoria('Cuscuz')">
+
+        Cuscuz
+
+    </button>
+
+    <button onclick="filtrarCategoria('Bebidas')">
+
+        Bebidas
+
+    </button>
+
+    <button onclick="filtrarCategoria('Sobremesas')">
+
+        Sobremesas
+
+    </button>
+
+</section>
+
+
+<section class="container">
+
+    <div
+        id="listaProdutos"
+        class="cards">
+
+    </div>
+
+</section>
+
+
+<div
+
+class="carrinho"
+
+onclick="window.location.href='carrinho.html'">
+
+    <i class="fa-solid fa-cart-shopping"></i>
+
+    <span id="itens-carrinho">
+
+        0
+
+    </span>
+
+</div>
+
+
+<nav>
+
+    <a href="index.html">
+
+        <i class="fa-solid fa-house"></i>
+
+        <span>Início</span>
+
+    </a>
+
+    <a class="ativo" href="cardapio.html">
+
+        <i class="fa-solid fa-utensils"></i>
+
+        <span>Cardápio</span>
+
+    </a>
+
+    <a href="pedido.html">
+
+        <i class="fa-solid fa-bag-shopping"></i>
+
+        <span>Pedido</span>
+
+    </a>
+
+    <a href="perfil.html">
+
+        <i class="fa-solid fa-user"></i>
+
+        <span>Perfil</span>
+
+    </a>
+
+</nav>
+
+
+<script src="js/produtos.js"></script>
+
+<script src="js/carrinho.js"></script>
+
+<script src="js/usuario.js"></script>
+
+</body>
+
+</html>

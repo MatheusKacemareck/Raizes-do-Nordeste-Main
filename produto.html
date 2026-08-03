@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Produto | Raízes do Nordeste</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+<img src="img/logo.png">
+
+<div>
+
+<h2>Raízes do Nordeste</h2>
+
+<span id="unidadeSelecionada">
+Selecione uma unidade
+</span>
+
+</div>
+
+</div>
+
+</header>
+
+
+<section class="container">
+
+<a href="cardapio.html">
+
+← Voltar ao Cardápio
+
+</a>
+
+</section>
+
+
+<section class="container">
+
+<div class="produto-detalhe">
+
+<img
+id="fotoProduto"
+src="img/produtos/tapioca-carne-sol.jpg"
+alt="Produto">
+
+<h2 id="nomeProduto">
+
+Nome do Produto
+
+</h2>
+
+<p
+id="descricaoProduto">
+
+Descrição do produto.
+
+</p>
+
+<h1
+id="precoProduto">
+
+R$ 0,00
+
+</h1>
+
+<div class="acoes-produto">
+
+<button
+class="btn"
+onclick="adicionarProdutoSelecionado()">
+
+<i class="fa-solid fa-cart-plus"></i>
+
+Adicionar ao Carrinho
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<nav>
+
+<a href="index.html">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Início</span>
+
+</a>
+
+<a class="ativo"
+href="cardapio.html">
+
+<i class="fa-solid fa-utensils"></i>
+
+<span>Cardápio</span>
+
+</a>
+
+<a href="pedido.html">
+
+<i class="fa-solid fa-bag-shopping"></i>
+
+<span>Pedido</span>
+
+</a>
+
+<a href="perfil.html">
+
+<i class="fa-solid fa-user"></i>
+
+<span>Perfil</span>
+
+</a>
+
+</nav>
+
+<script src="js/produtos.js"></script>
+
+<script src="js/carrinho.js"></script>
+<script src="js/usuario.js"></script>
+
+<script>
+
+function adicionarProdutoSelecionado(){
+
+const id = Number(
+
+localStorage.getItem("produtoSelecionado")
+
+);
+
+adicionarCarrinho(id);
+
+}
+
+</script>
+
+</body>
+
+</html>

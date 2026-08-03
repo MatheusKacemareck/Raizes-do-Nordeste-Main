@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Acompanhar Pedido</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/desktop.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+<img src="img/logo.png">
+
+<div>
+
+<h2>Pedido</h2>
+
+<span>Acompanhe seu pedido</span>
+
+</div>
+
+</div>
+
+</header>
+
+<section class="container">
+
+<div class="formulario">
+
+<h2>
+
+Pedido Confirmado 🎉
+
+</h2>
+
+<p>
+
+Seu pedido foi recebido com sucesso.
+
+</p>
+
+<div class="status">
+
+<div class="etapa ativa">
+
+✔ Pedido Recebido
+
+</div>
+
+<div class="etapa" id="preparo">
+
+🍳 Em preparo
+
+</div>
+
+<div class="etapa" id="rota">
+
+🛵 Saiu para entrega
+
+</div>
+
+<div class="etapa" id="entregue">
+
+🏠 Entregue
+
+</div>
+
+</div>
+
+<br>
+
+<a
+class="btn"
+href="historico.html">
+
+Ver Histórico
+
+</a>
+
+</div>
+
+</section>
+
+<nav>
+
+<a href="index.html">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Início</span>
+
+</a>
+
+<a href="cardapio.html">
+
+<i class="fa-solid fa-utensils"></i>
+
+<span>Cardápio</span>
+
+</a>
+
+<a class="ativo"
+href="pedido.html">
+
+<i class="fa-solid fa-bag-shopping"></i>
+
+<span>Pedido</span>
+
+</a>
+
+<a href="perfil.html">
+
+<i class="fa-solid fa-user"></i>
+
+<span>Perfil</span>
+
+</a>
+
+</nav>
+
+<script>
+
+setTimeout(()=>{
+
+document.getElementById("preparo").classList.add("ativa");
+
+},3000);
+
+setTimeout(()=>{
+
+document.getElementById("rota").classList.add("ativa");
+
+},6000);
+
+setTimeout(()=>{
+
+document.getElementById("entregue").classList.add("ativa");
+
+},9000);
+
+</script>
+
+</body>
+
+</html>
