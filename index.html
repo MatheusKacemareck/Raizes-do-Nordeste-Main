@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +7,87 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/desktop.css">
+
+    <style>
+        /* Correções locais: cabeçalho, conta e centralização do menu */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .acoes-conta {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .botao-conta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            min-height: 40px;
+            padding: 9px 14px;
+            border: 1px solid rgba(255, 255, 255, 0.75);
+            border-radius: 8px;
+            background: transparent;
+            color: #fff;
+            font: inherit;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .botao-conta:hover,
+        .botao-conta:focus-visible {
+            background: rgba(255, 255, 255, 0.14);
+        }
+
+        .botao-sair {
+            display: none;
+        }
+
+        .menu-inferior {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .menu-inferior a {
+            flex: 1;
+            min-width: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            line-height: 1;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                align-items: flex-start;
+            }
+
+            .acoes-conta {
+                gap: 6px;
+            }
+
+            .botao-conta {
+                min-height: 36px;
+                padding: 7px 9px;
+                font-size: 0.85rem;
+            }
+
+            .texto-conta {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -19,6 +99,23 @@
             <span>Sabores da nossa terra</span>
         </div>
     </div>
+
+    <div class="acoes-conta" aria-label="Acesso do usuário">
+        <a id="botaoEntrar" class="botao-conta" href="login.html">
+            <span aria-hidden="true">🔐</span>
+            <span class="texto-conta">Entrar</span>
+        </a>
+
+        <a id="botaoConta" class="botao-conta" href="perfil.html">
+            <span aria-hidden="true">👤</span>
+            <span class="texto-conta">Conta</span>
+        </a>
+
+        <button id="botaoSair" class="botao-conta botao-sair" type="button">
+            <span aria-hidden="true">🚪</span>
+            <span class="texto-conta">Sair</span>
+        </button>
+    </div>
 </header>
 
 <section class="categorias">
@@ -28,60 +125,43 @@
     <button>Sobremesas</button>
 </section>
 
-<div id="unidadeSelecionada">
-    Unidade
-</div>
+<div id="unidadeSelecionada">Unidade</div>
 
 <main class="container">
     <div class="cards">
 
         <div class="card">
             <img src="https://picsum.photos/300/180?1" alt="Tapioca">
-
             <div class="info">
                 <h3>Tapioca de Queijo</h3>
                 <p>Massa artesanal com queijo coalho.</p>
-
                 <div class="rodape-card">
                     <span>R$ 14,90</span>
-
-                    <button type="button" onclick="adicionarCarrinho('Tapioca de Queijo',14.90)">
-                        +
-                    </button>
+                    <button type="button" onclick="adicionarCarrinho('Tapioca de Queijo',14.90)">+</button>
                 </div>
             </div>
         </div>
 
         <div class="card">
             <img src="https://picsum.photos/300/180?2" alt="Cuscuz">
-
             <div class="info">
                 <h3>Cuscuz Completo</h3>
                 <p>Cuscuz, carne de sol e queijo.</p>
-
                 <div class="rodape-card">
                     <span>R$ 18,90</span>
-
-                    <button type="button" onclick="adicionarCarrinho('Cuscuz Completo',18.90)">
-                        +
-                    </button>
+                    <button type="button" onclick="adicionarCarrinho('Cuscuz Completo',18.90)">+</button>
                 </div>
             </div>
         </div>
 
         <div class="card">
             <img src="https://picsum.photos/300/180?3" alt="Café">
-
             <div class="info">
                 <h3>Café Regional</h3>
                 <p>Café especial nordestino.</p>
-
                 <div class="rodape-card">
                     <span>R$ 6,00</span>
-
-                    <button type="button" onclick="adicionarCarrinho('Café Regional',6)">
-                        +
-                    </button>
+                    <button type="button" onclick="adicionarCarrinho('Café Regional',6)">+</button>
                 </div>
             </div>
         </div>
@@ -93,7 +173,7 @@
     🛒 <span id="itens-carrinho">0</span>
 </div>
 
-<nav class="menu-inferior">
+<nav class="menu-inferior" aria-label="Navegação principal">
     <a href="index.html" aria-label="Início">🏠</a>
     <a href="cardapio.html" aria-label="Cardápio">🍽️</a>
     <a href="fidelidade.html" aria-label="Fidelidade">🎁</a>
@@ -101,6 +181,35 @@
 </nav>
 
 <script src="js/app.js"></script>
+<script>
+    function usuarioEstaLogado() {
+        return localStorage.getItem('logado') === 'true' ||
+               localStorage.getItem('usuarioLogado') === 'true' ||
+               Boolean(localStorage.getItem('usuario'));
+    }
+
+    function atualizarBotoesConta() {
+        const logado = usuarioEstaLogado();
+        const botaoEntrar = document.getElementById('botaoEntrar');
+        const botaoConta = document.getElementById('botaoConta');
+        const botaoSair = document.getElementById('botaoSair');
+
+        botaoEntrar.style.display = logado ? 'none' : 'inline-flex';
+        botaoConta.style.display = 'inline-flex';
+        botaoSair.style.display = logado ? 'inline-flex' : 'none';
+    }
+
+    document.getElementById('botaoSair').addEventListener('click', function () {
+        localStorage.removeItem('logado');
+        localStorage.removeItem('usuarioLogado');
+        localStorage.removeItem('usuario');
+        sessionStorage.clear();
+        atualizarBotoesConta();
+        window.location.href = 'index.html';
+    });
+
+    atualizarBotoesConta();
+</script>
 
 </body>
 </html>
