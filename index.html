@@ -51,21 +51,45 @@
             display: none;
         }
 
+        /* Menu inferior com quatro áreas exatamente iguais */
         .menu-inferior {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
+            position: fixed !important;
+            top: auto !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 65px;
+            margin: 0 !important;
+            padding: 0 !important;
+            display: grid !important;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            align-items: stretch;
+            justify-content: initial !important;
+            background: #fff;
+            border-top: 1px solid #ddd;
+            z-index: 1000;
         }
 
         .menu-inferior a {
-            flex: 1;
+            width: 100% !important;
             min-width: 0;
             height: 100%;
-            display: flex;
+            margin: 0 !important;
+            padding: 0 !important;
+            display: flex !important;
             align-items: center;
             justify-content: center;
+            box-sizing: border-box;
             text-align: center;
             line-height: 1;
+            font-size: 26px;
+            text-decoration: none;
+        }
+
+        /* Evita que o menu cubra o final do conteúdo */
+        body {
+            padding-bottom: 75px;
         }
 
         @media (max-width: 600px) {
