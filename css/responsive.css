@@ -1,0 +1,83 @@
+/* Tablets */
+
+@media (min-width:768px){
+
+header{
+
+padding:20px 40px;
+
+}
+
+.banner img{
+
+height:320px;
+
+}
+
+.container{
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:25px;
+
+}
+
+}
+
+/* Desktop */
+
+@media (min-width:1200px){
+
+.container{
+
+max-width:1200px;
+
+}
+
+.cards{
+
+grid-template-columns:repeat(3,1fr);
+
+}
+
+.banner img{
+
+height:420px;
+
+}
+
+.banner-texto h1{
+
+font-size:42px;
+
+}
+
+.banner-texto p{
+
+font-size:18px;
+
+}
+
+nav{
+
+max-width:450px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+border-radius:20px 20px 0 0;
+
+}
+
+}
