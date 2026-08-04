@@ -69,8 +69,8 @@
             grid-template-columns: repeat(4, minmax(0, 1fr));
             align-items: stretch;
             justify-content: initial !important;
-            background:#7A3E06;
-            border-top:2px solid #5E2E04;
+            background:#6A3305;
+            border-top:2px solid #512503;
             z-index: 1000;
         }
 
@@ -88,7 +88,7 @@
             box-sizing: border-box;
             text-align: center;
             line-height: 1;
-            color:#ffffff;
+            color:#F8E7C7;
             text-decoration: none;
         }
 
@@ -105,13 +105,62 @@
         .menu-inferior a:hover,
         .menu-inferior a:focus-visible,
         .menu-inferior a.ativo {
-            color:#FFD87A;
-            background:#91531C;
+            color:#F5C451;
+            background:#7F4112;
         }
 
         /* Evita que o menu cubra o final do conteúdo */
         body {
             padding-bottom: 75px;
+        }
+
+
+        /* Mantém o carrinho flutuante totalmente acima do menu inferior */
+        .carrinho {
+            position: fixed !important;
+            right: 20px !important;
+            bottom: 85px !important;
+            top: auto !important;
+            z-index: 1100 !important;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: #F5A623;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 4px 12px rgba(0,0,0,.18);
+            border: none;
+        }
+
+        .carrinho i{
+            color:#fff;
+        }
+
+        .carrinho #itens-carrinho{
+            position:absolute;
+            top:-4px;
+            right:-4px;
+            width:24px;
+            height:24px;
+            border-radius:50%;
+            background:#e60012;
+            color:#fff;
+            font-size:12px;
+            font-weight:700;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+        /* Ajuste para telas pequenas, respeitando a área segura do celular */
+        @media (max-width: 600px) {
+            .carrinho {
+                right: 16px !important;
+                bottom: calc(80px + env(safe-area-inset-bottom, 0px)) !important;
+            }
         }
 
         @media (max-width: 600px) {
